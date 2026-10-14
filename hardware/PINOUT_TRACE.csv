@@ -1,0 +1,16 @@
+from_ref,to_ref,expected_function,evidence,confidence,measurement,result
+MCU.40,DC6V/S3/C17?,VCC,PCB photo + BOM,UNKNOWN,unpowered continuity,TBD
+MCU.20,DC6V-/GND?,GND,PCB photo + BOM,UNKNOWN,unpowered continuity,TBD
+MCU.18,Z1/C7?,XTAL1,standard STC data sheet + PCB photo,INFERENCE,unpowered continuity,TBD
+MCU.19,Z1/C8?,XTAL2,standard STC data sheet + PCB photo,INFERENCE,unpowered continuity,TBD
+MCU.9,reset network?,RST,standard STC data sheet + PCB photo,INFERENCE,unpowered continuity,TBD
+MCU.31,logic rail?,EA,standard STC data sheet + PCB photo,INFERENCE,unpowered continuity,TBD
+MCU.10,MAX232.12 or .9?,RXD,standard STC and MAX232 datasheets + PCB photos,UNKNOWN,unpowered continuity,TBD
+MCU.11,MAX232.11 or .10?,TXD,standard STC and MAX232 datasheets + PCB photos,UNKNOWN,unpowered continuity,TBD
+MCU.unknown,L293D.2,L293D input,PCB photo does not reveal trace relationship,UNKNOWN,unpowered continuity,TBD
+MCU.unknown,L293D.7,L293D input,PCB photo does not reveal trace relationship,UNKNOWN,unpowered continuity,TBD
+MCU.unknown,L293D.10,L293D input,PCB photo does not reveal trace relationship,UNKNOWN,unpowered continuity,TBD
+MCU.unknown,L293D.15,L293D input,PCB photo does not reveal trace relationship,UNKNOWN,unpowered continuity,TBD
+MCU.unknown,L293D.1/9,enable,PCB photo does not reveal trace relationship,UNKNOWN,unpowered continuity,TBD
+L293D.3/6/11/14,M1/M2?,motor outputs,component data sheet + PCB photo,UNKNOWN,unpowered continuity,TBD
+SU03T.TX,MCU.10 RXD,one-way run UART,SU03T core datasheet + PCB connection unverified,DESIGN,continuity + scope voltage,TBD

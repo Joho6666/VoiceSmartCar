@@ -1,0 +1,13 @@
+# Generated build output and local IDE state
+/build/
+**/build/
+**/__pycache__/
+*.py[cod]
+*.uvopt
+*.uvgui*
+*.kicad_prl
+*.kicad_wks
+
+# Generated hardware review artifacts containing local state
+/hardware/*.net
+/hardware/*-erc.rpt
