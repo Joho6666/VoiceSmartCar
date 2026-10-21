@@ -47,7 +47,15 @@ foreach ($source in $sources) {
     $listing = Join-Path $source.DirectoryName ($source.BaseName + '.LST')
     if (Test-Path -LiteralPath $listing) {
         $listingDestination = Join-Path $build ($source.BaseName + '.LST')
-        Move-Item -LiteralPath $listing -Destination $listingDestination -Force
+        try {
+            Move-Item -LiteralPath $listing -Destination $listingDestination -Force -ErrorAction Stop
+        } catch {
+            # Some C51 installations write listings through the project listing
+            # directory and remove the source-side file between these checks.
+            # Listings are diagnostic artifacts; do not turn that race into a
+            # false compile failure.
+            $logLines += "NOTE listing was not moved for $($source.Name): $($_.Exception.Message)"
+        }
     }
     if ($code -ne 0 -or $output -match '\*\*\* ERROR C\d+') {
         Set-Content -LiteralPath $log -Value ($logLines -join "`r`n") -Encoding UTF8
